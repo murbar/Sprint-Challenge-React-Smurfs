@@ -82,3 +82,10 @@ nav a.active {
   color: black;
   border-radius: 0.5rem;
 }
+
+.Smurf button {
+  background: tomato;
+  border: none;
+  border-radius: 0.2rem;
+  color: white;
+}
