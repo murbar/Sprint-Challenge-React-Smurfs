@@ -45,7 +45,9 @@ class App extends Component {
       <Router>
         <div className="App">
           <nav>
-            <NavLink to="/">Surf Directory</NavLink>
+            <NavLink to="/" exact>
+              Smurf Directory
+            </NavLink>
             <NavLink to="/smurf-form">Add a Smurf</NavLink>
           </nav>
           <Route
