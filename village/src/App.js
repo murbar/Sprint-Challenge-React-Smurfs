@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
@@ -34,16 +35,19 @@ class App extends Component {
         this.setState({
           smurfs: res.data
         });
+        console.log(this.state.smurfs);
       })
       .catch(err => console.log(err.response.data));
   };
 
   render() {
     return (
-      <div className="App">
-        <SmurfForm addSmurf={this.addSmurf} />
-        <Smurfs smurfs={this.state.smurfs} />
-      </div>
+      <Router>
+        <div className="App">
+          <SmurfForm addSmurf={this.addSmurf} />
+          <Smurfs smurfs={this.state.smurfs} />
+        </div>
+      </Router>
     );
   }
 }
