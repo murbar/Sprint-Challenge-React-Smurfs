@@ -28,16 +28,15 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
-  addSmurf = smurfData => {
+  addSmurf = (smurfData, history) => {
     axios
       .post(this.endpoint, smurfData)
       .then(res => {
-        console.log(res.data);
         this.setState({
           smurfs: res.data,
           errorMsg: ''
         });
-        console.log(this.state.smurfs);
+        history.push('/');
       })
       .catch(err => {
         console.warn(err);
