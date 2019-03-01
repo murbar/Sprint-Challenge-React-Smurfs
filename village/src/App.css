@@ -74,3 +74,11 @@ nav a.active {
 .SmurfForm button {
   background: white;
 }
+
+.error-msg {
+  background: tomato;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  color: black;
+  border-radius: 0.5rem;
+}
