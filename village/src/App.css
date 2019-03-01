@@ -1,3 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  background: url('/village.jpg') no-repeat center center fixed;
+}
+
+h1,
+h2 {
+  font-family: 'Bubblegum Sans', sans-serif;
+}
+
 .App {
-  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  max-width: 30rem;
+  margin: 2rem auto;
+  color: #dfb574;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+nav {
+  font-family: 'Bubblegum Sans', sans-serif;
+}
+
+nav a {
+  margin-right: 1rem;
+}
+
+nav a.active {
+  color: #555;
+}
+
+.Smurfs ul {
+  padding: 0;
+}
+
+.Smurf > * {
+  margin: 0.25rem 0;
+}
+
+.Smurf {
+  margin-bottom: 2rem;
+}
+.Smurf:last-child {
+  margin-bottom: 0;
+}
+.SmurfForm input,
+.SmurfForm button {
+  display: block;
+  width: 40%;
+  min-width: 10rem;
+  background: #dfb574;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+}
+
+.SmurfForm button {
+  background: white;
 }
