@@ -9,7 +9,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      smurfs: []
+      smurfs: [],
+      errorMsg: ''
     };
   }
   // add any needed code to ensure that the smurfs collection exists on state and it has data coming from the server
@@ -33,11 +34,15 @@ class App extends Component {
       .then(res => {
         console.log(res.data);
         this.setState({
-          smurfs: res.data
+          smurfs: res.data,
+          errorMsg: ''
         });
         console.log(this.state.smurfs);
       })
-      .catch(err => console.log(err.response.data));
+      .catch(err => {
+        console.warn(err);
+        this.setState({ errorMsg: err.response.data.Error });
+      });
   };
 
   render() {
@@ -50,6 +55,7 @@ class App extends Component {
             </NavLink>
             <NavLink to="/smurf-form">Add a Smurf</NavLink>
           </nav>
+          {this.state.errorMsg && <div className="error-msg">{this.state.errorMsg}</div>}
           <Route
             exact
             path="/"
